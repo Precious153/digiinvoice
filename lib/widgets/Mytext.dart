@@ -12,6 +12,7 @@ Widget MyText({
       fontWeight: weight,
       color: color,
       fontSize: size,
+
     ),
   );
 }
