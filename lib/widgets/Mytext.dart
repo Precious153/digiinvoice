@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 Widget MyText({
   final String? title,
@@ -8,11 +9,10 @@ Widget MyText({
 }) {
   return Text(
     title!,
-    style: TextStyle(
+    style: GoogleFonts.poppins(
       fontWeight: weight,
       color: color,
       fontSize: size,
-
     ),
   );
 }
