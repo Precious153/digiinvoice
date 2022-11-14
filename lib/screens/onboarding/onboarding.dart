@@ -3,10 +3,9 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'onboard1.dart';
 import 'onboard2.dart';
 import 'onboard3.dart';
-import 'package:digiinvoice/const.dart';
 import 'package:digiinvoice/widgets/Mytext.dart';
-import 'customBox.dart';
-import 'signuporlogin.dart';
+import '../../widgets/customBox.dart';
+import '../../signuporlogin.dart';
 
 class Onboarding extends StatefulWidget {
   const Onboarding({Key? key}) : super(key: key);

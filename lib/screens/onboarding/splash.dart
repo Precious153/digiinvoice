@@ -1,5 +1,5 @@
 import 'package:digiinvoice/const.dart';
-import 'package:digiinvoice/onboarding.dart';
+import 'package:digiinvoice/screens/onboarding/onboarding.dart';
 import 'package:digiinvoice/widgets/Mytext.dart';
 import 'package:flutter/material.dart';
 
