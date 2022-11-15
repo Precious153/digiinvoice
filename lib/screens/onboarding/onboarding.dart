@@ -14,7 +14,6 @@ class Onboarding extends StatefulWidget {
 
 class _OnboardingState extends State<Onboarding> {
   PageController _controller = PageController();
-  bool done = false;
   int selectedIndex = 0;
 
   @override
@@ -118,6 +117,9 @@ class _OnboardingState extends State<Onboarding> {
                                 widget: Center(
                                   child: MyText(
                                     title: 'Get Started',
+                                    size: textsize,
+                                    color: Colors.white,
+                                    weight: FontWeight.w400,
                                   ),
                                 ),
                               ),
