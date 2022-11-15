@@ -102,26 +102,27 @@ class _OnboardingState extends State<Onboarding> {
                             ),
                           ),
                         )
-                      : SizedBox.shrink(),
-                  selectedIndex == 2
-                      ? GestureDetector(
-                          onTap: () {
-                            Navigator.push(context,
-                                MaterialPageRoute(builder: (_) => SignUp()));
-                          },
-                          child: CustomBbox(
-                            color: mainColor,
-                            width: 128,
-                            height: 45,
-                            radius: BorderRadius.circular(20),
-                            widget: Center(
-                              child: MyText(
-                                title: 'Get Started',
+                      : selectedIndex == 2
+                          ? GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (_) => SignUp()));
+                              },
+                              child: CustomBbox(
+                                color: mainColor,
+                                width: 128,
+                                height: 45,
+                                radius: BorderRadius.circular(20),
+                                widget: Center(
+                                  child: MyText(
+                                    title: 'Get Started',
+                                  ),
+                                ),
                               ),
-                            ),
-                          ),
-                        )
-                      : SizedBox.shrink(),
+                            )
+                          : SizedBox.shrink(),
                 ],
               ),
             ],
