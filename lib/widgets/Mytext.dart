@@ -5,6 +5,7 @@ Widget MyText({
   final String? title,
   final double? size,
   final Color? color,
+  final TextAlign? align,
   final FontWeight? weight,
 }) {
   return Text(
@@ -14,5 +15,6 @@ Widget MyText({
       color: color,
       fontSize: size,
     ),
+    textAlign: align,
   );
 }
