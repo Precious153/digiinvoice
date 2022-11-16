@@ -11,7 +11,7 @@ Widget MyText({
   return Text(
     title!,
     style: GoogleFonts.poppins(
-      fontWeight: weight,
+      fontWeight: weight ?? FontWeight.w500,
       color: color,
       fontSize: size,
     ),

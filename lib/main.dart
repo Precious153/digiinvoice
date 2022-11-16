@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:provider/provider.dart';
 import 'screens/onboarding/splash.dart';
 
 void main() {
@@ -19,12 +18,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
       initialRoute: "/",
-      routes: {'/': (context) => const Splash()},
+      routes: {
+        '/': (context) => const Splash(),
+      },
     );
   }
 }

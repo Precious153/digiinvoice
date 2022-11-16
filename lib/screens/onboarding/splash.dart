@@ -20,7 +20,7 @@ class _SplashState extends State<Splash> {
   _navigatetohome() async {
     await Future.delayed(
         Duration(
-          milliseconds: 3000,
+          milliseconds: 5000,
         ),
         () {});
     Navigator.pushReplacement(
@@ -28,15 +28,14 @@ class _SplashState extends State<Splash> {
   }
 
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: SafeArea(
-        child: Center(
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Colors.white,
+        body: Align(
+          alignment: Alignment.center,
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(
-                height: 400,
-              ),
               Image.asset(image1),
               SizedBox(
                 height: 5,
@@ -44,8 +43,7 @@ class _SplashState extends State<Splash> {
               MyText(
                 title: "Digi Invoice",
                 size: 40,
-                color: Colors.blueAccent,
-                weight: FontWeight.w500,
+                color: mainColor,
               ),
             ],
           ),

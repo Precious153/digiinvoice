@@ -1,10 +1,11 @@
+import 'package:digiinvoice/const.dart';
 import 'package:flutter/material.dart';
 
 Widget InputField({
   final TextEditingController? controller,
   final TextInputType? keyboard,
-  final Widget? label,
-  final String? hint,
+  final TextInputAction? inputAction,
+  final String? label,
   final Icon? icon,
   final String? Function(String?)? validator,
   final Color? borderColor,
@@ -13,16 +14,27 @@ Widget InputField({
   return TextFormField(
     controller: controller,
     keyboardType: keyboard ?? TextInputType.text,
+    textInputAction: inputAction ?? TextInputAction.next,
     validator: validator,
     decoration: InputDecoration(
-      label: label,
-      hintText: hint,
+      labelText: label,
+      labelStyle: TextStyle(
+        color: textColor,
+        fontSize: textsize,
+      ),
       filled: true,
-      fillColor: color,
+      fillColor: Colors.white,
       suffixIcon: icon,
-      border: OutlineInputBorder(
+      enabledBorder: OutlineInputBorder(
         borderSide: BorderSide(
-          color: borderColor ?? Colors.blueAccent,
+          color: Colors.transparent,
+        ),
+      ),
+      focusedBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(10),
+        borderSide: BorderSide(
+          color: mainColor,
+          width: 2,
         ),
       ),
     ),
