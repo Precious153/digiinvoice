@@ -36,6 +36,7 @@ class _OnboardingState extends State<Onboarding> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: scaffoldColor,
         body: Padding(
           padding: const EdgeInsets.all(20),
           child: Column(

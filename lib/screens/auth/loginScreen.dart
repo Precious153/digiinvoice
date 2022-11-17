@@ -2,19 +2,23 @@ import 'package:digiinvoice/const.dart';
 import 'package:digiinvoice/screens/auth/SignUP.dart';
 import 'package:digiinvoice/widgets/Mytext.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
+import '../../models/provider/formControllers.dart';
 import '../../widgets/InputField.dart';
 import '../../widgets/customBox.dart';
+import '../homeUI/home.dart';
 import 'forgotPassword.dart';
 
 class LoginScreen extends StatelessWidget {
   LoginScreen({Key? key}) : super(key: key);
-  TextEditingController email = TextEditingController();
-  TextEditingController password = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
+    final formProvider = Provider.of<FormControllers>(context);
     return SafeArea(
         child: Scaffold(
+      backgroundColor: scaffoldColor,
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 30.0, horizontal: 10),
         child: Align(
@@ -41,7 +45,7 @@ class LoginScreen extends StatelessWidget {
                 shadowcolor: shadowColor.withOpacity(0.2),
                 widget: InputField(
                   label: 'Email Address',
-                  controller: password,
+                  controller: formProvider.password,
                 ),
               ),
               smallspace,
@@ -52,7 +56,7 @@ class LoginScreen extends StatelessWidget {
                 shadowcolor: shadowColor.withOpacity(0.2),
                 widget: InputField(
                   label: 'Enter Password',
-                  controller: email,
+                  controller: formProvider.email,
                   inputAction: TextInputAction.done,
                 ),
               ),
@@ -74,16 +78,22 @@ class LoginScreen extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 48),
-              CustomBbox(
-                color: mainColor,
-                radius: BorderRadius.circular(20),
-                width: 335,
-                height: 54,
-                widget: Center(
-                  child: MyText(
-                    color: Colors.white,
-                    size: textsize,
-                    title: 'Confirm',
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushReplacement(
+                      context, MaterialPageRoute(builder: (_) => Home()));
+                },
+                child: CustomBbox(
+                  color: mainColor,
+                  radius: BorderRadius.circular(20),
+                  width: 335,
+                  height: 54,
+                  widget: Center(
+                    child: MyText(
+                      color: Colors.white,
+                      size: textsize,
+                      title: 'Confirm',
+                    ),
                   ),
                 ),
               ),

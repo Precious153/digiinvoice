@@ -17,6 +17,7 @@ class _VerifyScreenState extends State<VerifyScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: scaffoldColor,
         body: Padding(
           padding: const EdgeInsets.symmetric(vertical: 30.0, horizontal: 10),
           child: Column(

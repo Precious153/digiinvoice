@@ -30,7 +30,7 @@ class _SplashState extends State<Splash> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: scaffoldColor,
         body: Align(
           alignment: Alignment.center,
           child: Column(

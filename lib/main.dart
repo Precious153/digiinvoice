@@ -1,5 +1,8 @@
+import 'package:digiinvoice/models/provider/formControllers.dart';
+import 'package:digiinvoice/screens/HomeUI/inventory/InventoryPage1.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
 import 'screens/onboarding/splash.dart';
 
 void main() {
@@ -16,15 +19,20 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => FormControllers()),
+      ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        initialRoute: "/",
+        routes: {
+          '/': (context) => const Splash(),
+        },
       ),
-      initialRoute: "/",
-      routes: {
-        '/': (context) => const Splash(),
-      },
     );
   }
 }

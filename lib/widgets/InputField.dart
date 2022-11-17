@@ -6,7 +6,8 @@ Widget InputField({
   final TextInputType? keyboard,
   final TextInputAction? inputAction,
   final String? label,
-  final Icon? icon,
+  final String? hint,
+  final Widget? icon,
   final String? Function(String?)? validator,
   final Color? borderColor,
   final Color? color,
@@ -19,6 +20,11 @@ Widget InputField({
     decoration: InputDecoration(
       labelText: label,
       labelStyle: TextStyle(
+        color: textColor,
+        fontSize: textsize,
+      ),
+      hintText: hint,
+      hintStyle: TextStyle(
         color: textColor,
         fontSize: textsize,
       ),

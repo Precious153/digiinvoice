@@ -1,7 +1,9 @@
 import 'package:digiinvoice/screens/auth/loginScreen.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../../const.dart';
+import '../../models/provider/formControllers.dart';
 import '../../widgets/InputField.dart';
 import '../../widgets/Mytext.dart';
 import '../../widgets/customBox.dart';
@@ -9,10 +11,9 @@ import '../../widgets/customBox.dart';
 class CreateNewPassword extends StatelessWidget {
   CreateNewPassword({Key? key}) : super(key: key);
 
-  TextEditingController password = TextEditingController();
-  TextEditingController reEnterPassword = TextEditingController();
   @override
   Widget build(BuildContext context) {
+    final formProvider = Provider.of<FormControllers>(context);
     return SafeArea(
       child: Scaffold(
         body: Padding(
@@ -44,7 +45,7 @@ class CreateNewPassword extends StatelessWidget {
                     icon: Icon(
                       Icons.remove_red_eye_sharp,
                     ),
-                    controller: password,
+                    controller: formProvider.password,
                   ),
                 ),
                 smallspace,
@@ -59,7 +60,7 @@ class CreateNewPassword extends StatelessWidget {
                       Icons.remove_red_eye_sharp,
                     ),
                     inputAction: TextInputAction.done,
-                    controller: reEnterPassword,
+                    controller: formProvider.reEnterPassword,
                   ),
                 ),
                 bigspace,
