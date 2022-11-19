@@ -12,5 +12,7 @@ const textColor = Color(0xff797979);
 const shadowColor = Color(0xff797979);
 const bigspace = SizedBox(height: 32);
 const smallspace = SizedBox(height: 16);
+const Color navTextColor = Color(0xff111111);
+const Color white = Color(0xffFFFFFF);
 const double textsize = 14;
 const double headersize = 20;

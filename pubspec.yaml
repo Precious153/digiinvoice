@@ -40,6 +40,7 @@ dependencies:
   connectivity_plus: ^2.3.9
   google_fonts: ^3.0.1
   smooth_page_indicator: ^1.0.0+2
+  device_preview: ^1.1.0
 
 dev_dependencies:
   flutter_test:

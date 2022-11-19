@@ -74,16 +74,21 @@ class LoginScreen extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 48),
-              CustomBbox(
-                color: mainColor,
-                radius: BorderRadius.circular(20),
-                width: 335,
-                height: 54,
-                widget: Center(
-                  child: MyText(
-                    color: Colors.white,
-                    size: textsize,
-                    title: 'Confirm',
+              InkWell(
+                onTap: (){
+                  Navigator.pushNamed(context, 'ButtonNav');
+                },
+                child: CustomBbox(
+                  color: mainColor,
+                  radius: BorderRadius.circular(20),
+                  width: 335,
+                  height: 54,
+                  widget: Center(
+                    child: MyText(
+                      color: Colors.white,
+                      size: textsize,
+                      title: 'Confirm',
+                    ),
                   ),
                 ),
               ),
