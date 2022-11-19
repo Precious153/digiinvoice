@@ -3,6 +3,8 @@ import 'package:digiinvoice/screens/auth/verify.dart';
 import 'package:digiinvoice/widgets/InputField.dart';
 import 'package:digiinvoice/widgets/customBox.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import '../../models/provider/formControllers.dart';
 import '../../widgets/Mytext.dart';
 
 class SignUp extends StatefulWidget {
@@ -14,17 +16,13 @@ class SignUp extends StatefulWidget {
 
 class _SignUpState extends State<SignUp> {
   bool value = false;
-  TextEditingController businessName = TextEditingController();
-  TextEditingController email = TextEditingController();
-  TextEditingController phoneNumber = TextEditingController();
-  TextEditingController password = TextEditingController();
-  TextEditingController reEnterPassword = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
+    final formProvider = Provider.of<FormControllers>(context);
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: scaffoldColor,
         body: Padding(
           padding: const EdgeInsets.symmetric(vertical: 30.0, horizontal: 10),
           child: SingleChildScrollView(
@@ -52,7 +50,7 @@ class _SignUpState extends State<SignUp> {
                   shadowcolor: shadowColor.withOpacity(0.2),
                   widget: InputField(
                     label: 'Business Name',
-                    controller: businessName,
+                    controller: formProvider.businessName,
                   ),
                 ),
                 smallspace,
@@ -63,7 +61,7 @@ class _SignUpState extends State<SignUp> {
                   shadowcolor: shadowColor.withOpacity(0.2),
                   widget: InputField(
                     label: 'Email Address',
-                    controller: email,
+                    controller: formProvider.email,
                   ),
                 ),
                 smallspace,
@@ -74,7 +72,7 @@ class _SignUpState extends State<SignUp> {
                   shadowcolor: shadowColor.withOpacity(0.2),
                   widget: InputField(
                     label: 'Phone Number',
-                    controller: phoneNumber,
+                    controller: formProvider.phoneNumber,
                   ),
                 ),
                 smallspace,
@@ -88,7 +86,7 @@ class _SignUpState extends State<SignUp> {
                     icon: Icon(
                       Icons.remove_red_eye_sharp,
                     ),
-                    controller: password,
+                    controller: formProvider.password,
                   ),
                 ),
                 smallspace,
@@ -103,7 +101,7 @@ class _SignUpState extends State<SignUp> {
                       Icons.remove_red_eye_sharp,
                     ),
                     inputAction: TextInputAction.done,
-                    controller: reEnterPassword,
+                    controller: formProvider.reEnterPassword,
                   ),
                 ),
                 SizedBox(height: 28),

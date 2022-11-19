@@ -2,7 +2,6 @@ import 'package:digiinvoice/const.dart';
 import 'package:digiinvoice/widgets/Mytext.dart';
 import 'package:digiinvoice/widgets/customBox.dart';
 import 'package:flutter/material.dart';
-
 import 'loginScreen.dart';
 
 class CompletedScreen extends StatelessWidget {
@@ -12,6 +11,7 @@ class CompletedScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
+      backgroundColor: scaffoldColor,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

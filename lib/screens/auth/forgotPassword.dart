@@ -11,6 +11,7 @@ class ForgotPasswordScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: scaffoldColor,
         body: Padding(
           padding: const EdgeInsets.symmetric(vertical: 30.0, horizontal: 10),
           child: Column(

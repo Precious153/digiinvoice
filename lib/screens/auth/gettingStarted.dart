@@ -12,6 +12,7 @@ class GettingStarted extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: scaffoldColor,
         body: Align(
           alignment: Alignment.center,
           child: Column(
