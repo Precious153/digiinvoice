@@ -1,8 +1,6 @@
 import 'package:digiinvoice/screens/homeUI/receipt/receipt.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import '../../const.dart';
-
 import 'Customers/customers.dart';
 import 'inventory/InventoryPage1.dart';
 import 'invoice/InvoicePage1.dart';
@@ -16,7 +14,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   int index = 0;
-
+  var currentIndex;
   var Kscreens = <Widget>[
     InventoryPage1(),
     InvoicePage1(),
@@ -33,25 +31,26 @@ class _HomeState extends State<Home> {
           topRight: Radius.circular(20),
         ),
         child: BottomNavigationBar(
-          type: BottomNavigationBarType.fixed,
           backgroundColor: Colors.white,
+          type: BottomNavigationBarType.fixed,
           selectedIconTheme: IconThemeData(color: mainColor),
-          selectedItemColor: mainColor,
+          fixedColor: mainColor,
           showSelectedLabels: true,
           currentIndex: index,
-          onTap: (int currentIndex) {
+          onTap: (currentIndex) {
             setState(() {
               index = currentIndex;
-              print(index);
             });
           },
           items: [
             BottomNavigationBarItem(
-              icon: Image.asset(invoice),
+              icon: Icon(
+                Icons.description_outlined,
+              ),
               label: 'invoice',
             ),
             BottomNavigationBarItem(
-              icon: SvgPicture.asset(receipt),
+              icon: Icon(Icons.receipt_long_outlined),
               label: 'Receipt',
             ),
             BottomNavigationBarItem(
@@ -59,7 +58,9 @@ class _HomeState extends State<Home> {
               label: 'Customers',
             ),
             BottomNavigationBarItem(
-              icon: SvgPicture.asset(inventory),
+              icon: Icon(
+                Icons.inventory_2_outlined,
+              ),
               label: 'Inventory',
             ),
           ],

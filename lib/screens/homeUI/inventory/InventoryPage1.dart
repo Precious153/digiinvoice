@@ -1,14 +1,11 @@
 import 'package:digiinvoice/const.dart';
 import 'package:digiinvoice/models/provider/formControllers.dart';
-import 'package:digiinvoice/screens/auth/SignUP.dart';
 import 'package:digiinvoice/widgets/Mytext.dart';
 import 'package:digiinvoice/widgets/const%20widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../../widgets/InputField.dart';
 import '../../../widgets/customBox.dart';
-import '../Customers/customers.dart';
-import '../invoice/InvoicePage1.dart';
 
 class InventoryPage1 extends StatefulWidget {
   const InventoryPage1({Key? key}) : super(key: key);
