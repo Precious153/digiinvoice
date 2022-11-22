@@ -1,9 +1,11 @@
 import 'package:digiinvoice/const.dart';
 import 'package:digiinvoice/models/helpers/size_config.dart';
+import 'package:digiinvoice/models/provider/formControllers.dart';
 import 'package:digiinvoice/widgets/InputField.dart';
 import 'package:digiinvoice/widgets/Mytext.dart';
 import 'package:digiinvoice/widgets/customBox.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 
 
@@ -15,13 +17,10 @@ class AddCustomer extends StatefulWidget {
 }
 
 class _AddCustomerState extends State<AddCustomer> {
-  TextEditingController customer_name = TextEditingController();
-  TextEditingController customer_email = TextEditingController();
-  TextEditingController customer_phone = TextEditingController();
-  TextEditingController customer_address = TextEditingController();
-  TextEditingController customer_info = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
+    final formProvider = Provider.of<FormControllers>(context);
     SizeConfig.init(context);
     return Scaffold(
       body: SafeArea(
@@ -55,7 +54,7 @@ class _AddCustomerState extends State<AddCustomer> {
                   shadowcolor: shadowColor.withOpacity(0.2),
                   widget: InputField(
                     label: 'Customer Name',
-                    controller: customer_name,
+                    controller: formProvider.customerName,
                   ),
                 ),
                 SizedBox(height: getProportionateScreenHeight(28),),
@@ -66,7 +65,7 @@ class _AddCustomerState extends State<AddCustomer> {
                   shadowcolor: shadowColor.withOpacity(0.2),
                   widget: InputField(
                     label: 'Email Address',
-                    controller: customer_email,
+                    controller: formProvider.customerEmail,
                   ),
                 ),
                 SizedBox(height: getProportionateScreenHeight(28),),
@@ -77,7 +76,7 @@ class _AddCustomerState extends State<AddCustomer> {
                   shadowcolor: shadowColor.withOpacity(0.2),
                   widget: InputField(
                     label: 'Phone Number',
-                    controller: customer_phone,
+                    controller: formProvider.customerPhone,
                   ),
                 ),
                 SizedBox(height: getProportionateScreenHeight(8),),
@@ -95,7 +94,7 @@ class _AddCustomerState extends State<AddCustomer> {
                   shadowcolor: shadowColor.withOpacity(0.2),
                   widget: InputField(
                     label: 'Address',
-                    controller: customer_address,
+                    controller: formProvider.customerAddress,
                   ),
                 ),
 
@@ -107,7 +106,7 @@ class _AddCustomerState extends State<AddCustomer> {
                   shadowcolor: shadowColor.withOpacity(0.2),
                   widget: InputField(
                     label: 'Additional Information',
-                    controller: customer_info,
+                    controller: formProvider.customerInfo,
                   ),
                 ),
                 SizedBox(height: getProportionateScreenHeight(102),),
