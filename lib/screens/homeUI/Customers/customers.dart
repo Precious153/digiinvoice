@@ -12,8 +12,6 @@ import 'package:provider/provider.dart';
 import '../../../const.dart';
 
 class Customers extends StatelessWidget {
-  const Customers({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     final formProvider = Provider.of<FormControllers>(context);

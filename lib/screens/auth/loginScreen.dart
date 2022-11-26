@@ -1,5 +1,6 @@
 import 'package:digiinvoice/const.dart';
 import 'package:digiinvoice/screens/auth/SignUP.dart';
+import 'package:digiinvoice/screens/homeUI/nav.dart';
 import 'package:digiinvoice/widgets/Mytext.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -81,7 +82,8 @@ class LoginScreen extends StatelessWidget {
               GestureDetector(
                 onTap: () {
                   Navigator.pushReplacement(
-                      context, MaterialPageRoute(builder: (_) => Home()));
+                      context, MaterialPageRoute(builder: (_) =>
+                      Nav()));
                 },
                 child: CustomBbox(
                   color: mainColor,

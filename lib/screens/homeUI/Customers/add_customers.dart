@@ -1,6 +1,7 @@
 import 'package:digiinvoice/const.dart';
 import 'package:digiinvoice/models/helpers/size_config.dart';
 import 'package:digiinvoice/models/provider/formControllers.dart';
+import 'package:digiinvoice/screens/homeUI/Customers/customers.dart';
 import 'package:digiinvoice/widgets/InputField.dart';
 import 'package:digiinvoice/widgets/Mytext.dart';
 import 'package:digiinvoice/widgets/customBox.dart';
@@ -32,16 +33,17 @@ class _AddCustomerState extends State<AddCustomer> {
               children: [
                 SizedBox(height: getProportionateScreenHeight(32),),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     MyText(
                       title: 'New Customer',
                       size: 20,
                       color: navTextColor,
                     ),
-                    Spacer(),
+
                     GestureDetector(
                         onTap: (){
-                          Navigator.pushNamed(context, 'ButtonNav');
+                          Navigator.pop(context);
                         },
                         child: Icon(Icons.cancel_outlined,color:navTextColor,)),
                   ],
@@ -112,7 +114,6 @@ class _AddCustomerState extends State<AddCustomer> {
                 SizedBox(height: getProportionateScreenHeight(102),),
                 InkWell(
                   onTap: (){
-                    // Navigator.pushNamed(context, 'ButtonNav');
                     showModalBottomSheet(context: context,
                         builder:(context)=>Container(
                           height: getProportionateScreenHeight(271),
@@ -131,7 +132,7 @@ class _AddCustomerState extends State<AddCustomer> {
                               SizedBox(height: getProportionateScreenHeight(24),),
                               InkWell(
                                 onTap: (){
-                                  Navigator.pushNamed(context, 'ButtonNav');
+                                  Navigator.pop(context);
                                 },
                                 child: CustomBbox(
                                   color: mainColor,

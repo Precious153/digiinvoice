@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import '../../../const.dart';
 
 class InvoicePage1 extends StatefulWidget {
-  const InvoicePage1({Key? key}) : super(key: key);
+  InvoicePage1({this.onSeeAllTap, this.onNewCardTap});
+
+  VoidCallback? onSeeAllTap, onNewCardTap;
 
   @override
   State<InvoicePage1> createState() => _InvoicePage1State();
