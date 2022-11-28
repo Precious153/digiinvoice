@@ -32,16 +32,16 @@ class _EditCustomersState extends State<EditCustomers> {
                   children: [
                     SizedBox(height: getProportionateScreenHeight(32),),
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         MyText(
                           title: 'Edit Customer',
                           size: 20,
                           color: navTextColor,
                         ),
-                        Spacer(),
                         GestureDetector(
                             onTap: (){
-                              Navigator.pushNamed(context, 'ButtonNav');
+                              Navigator.pop(context);
                             },
                             child: Icon(Icons.cancel_outlined,color:navTextColor,)),
                       ],

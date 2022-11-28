@@ -2,6 +2,8 @@ import 'package:digiinvoice/const.dart';
 import 'package:digiinvoice/models/helpers/size_config.dart';
 import 'package:digiinvoice/models/provider/formControllers.dart';
 import 'package:digiinvoice/screens/homeUI/Customers/customers.dart';
+import 'package:digiinvoice/screens/homeUI/Customers/customers_list.dart';
+import 'package:digiinvoice/screens/homeUI/Customers/the_customers.dart';
 import 'package:digiinvoice/widgets/InputField.dart';
 import 'package:digiinvoice/widgets/Mytext.dart';
 import 'package:digiinvoice/widgets/customBox.dart';
@@ -132,7 +134,9 @@ class _AddCustomerState extends State<AddCustomer> {
                               SizedBox(height: getProportionateScreenHeight(24),),
                               InkWell(
                                 onTap: (){
-                                  Navigator.pop(context);
+                                  Navigator.pushReplacement(context,
+                                      MaterialPageRoute(builder:
+                                          (context)=>CustomersList()));
                                 },
                                 child: CustomBbox(
                                   color: mainColor,

@@ -1,5 +1,7 @@
 import 'package:digiinvoice/const.dart';
 import 'package:digiinvoice/models/helpers/size_config.dart';
+import 'package:digiinvoice/screens/homeUI/Customers/customers.dart';
+import 'package:digiinvoice/screens/homeUI/Customers/edit_customers.dart';
 import 'package:digiinvoice/widgets/Mytext.dart';
 import 'package:digiinvoice/widgets/customBox.dart';
 import 'package:flutter/material.dart';
@@ -22,41 +24,115 @@ class _TheCustomersState extends State<TheCustomers> {
           child: Column(
             children: [
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Icon(Icons.arrow_back,
-                  color: navTextColor,),
+                  InkWell(
+                    onTap: (){
+                      Navigator.pop(context);
+                    },
+                    child: Icon(Icons.arrow_back,
+                    color: navTextColor,),
+                  ),
                   SizedBox(width: getProportionateScreenWidth(9.5),),
                   MyText(
                     title: 'Brown Lydia',
                     size: 20,
                     color: navTextColor,
                   ),
-                  Spacer(),
+
                   Row(
                     children: [
-                      CustomBbox(
+                      InkWell(
+                        onTap: (){
+                          showModalBottomSheet(context: context,
+                            builder:(context)=>Container(
+                              height: getProportionateScreenHeight(271),
+                              width: double.infinity,
+                              color: Colors.white,
+                              child: Column(
+                                children: [
+                                  SizedBox(height: getProportionateScreenHeight(24),),
+                                  MyText(
+                                    title: 'Are you sure you want to\ndelete this customer?',
+                                    color: navTextColor,
+                                    align: TextAlign.center,
+                                    size: 20,
+                                  ),
+                                  SizedBox(height: getProportionateScreenHeight(16),),
+                                  MyText(
+                                    title: 'You will not be able to recover this\ndetails afterwards',
+                                    align: TextAlign.center,
+                                    color: textColor,
+                                    size: 12,
+                                    weight: FontWeight.w400,
+                                  ),
+                                  SizedBox(height: getProportionateScreenHeight(24),),
+                                  InkWell(
+                                    onTap: (){
+                                      Navigator.pushReplacement(context,
+                                          MaterialPageRoute(builder:
+                                              (context)=>Customers()));
+                                    },
+                                    child: CustomBbox(
+                                      color: mainColor,
+                                      radius: BorderRadius.circular(20),
+                                      width: getProportionateScreenWidth(128),
+                                      height: getProportionateScreenHeight(45),
+                                      widget: Center(
+                                        child: MyText(
+                                          color: Colors.white,
+                                          size: textsize,
+                                          title: 'Yes, delete',
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(height: getProportionateScreenHeight(16),),
+                                  InkWell(
+                                    onTap: (){
+                                      Navigator.pop(context);
+                                    },
+                                    child: MyText(
+                                      title: 'Cancel',
+                                      color: textColor,
+                                      size: 14,
+                                      weight: FontWeight.w400,
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                          );
+                        },
+                        child: CustomBbox(
+                            height: getProportionateScreenHeight(28),
+                            width: getProportionateScreenWidth(28),
+                            color: mainColor,
+                            widget: Center(
+                              child: Icon(
+                                Icons.delete_outline_outlined,
+                                color: white,
+                                size: 20,
+                              ),
+                            )
+                        ),
+                      ),
+                      SizedBox(width: getProportionateScreenWidth(16),),
+                      InkWell(
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>EditCustomers()));
+                        },
+                        child: CustomBbox(
                           height: getProportionateScreenHeight(28),
                           width: getProportionateScreenWidth(28),
                           color: mainColor,
                           widget: Center(
-                            child: Icon(
-                              Icons.delete_outline_outlined,
-                              color: white,
-                              size: 20,
-                            ),
-                          )
-                      ),
-                      SizedBox(width: getProportionateScreenWidth(16),),
-                      CustomBbox(
-                        height: getProportionateScreenHeight(28),
-                        width: getProportionateScreenWidth(28),
-                        color: mainColor,
-                        widget: Center(
-                            child: Icon(
-                              Icons.edit,
-                              size: 20,
-                              color: white,
-                            )
+                              child: Icon(
+                                Icons.edit,
+                                size: 20,
+                                color: white,
+                              )
+                          ),
                         ),
                       ),
                     ],
