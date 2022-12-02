@@ -1,3 +1,6 @@
+import 'package:digiinvoice/screens/homeUI/inventory/edit_inventory.dart';
+import 'package:digiinvoice/screens/homeUI/inventory/inventory_list.dart';
+import 'package:digiinvoice/screens/homeUI/nav.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
@@ -31,7 +34,7 @@ class MyApp extends StatelessWidget {
           ),
           initialRoute: "/",
           routes: {
-            '/': (context) => const Splash(),
+            '/': (context) =>  Nav(),
           }),
     );
   }
