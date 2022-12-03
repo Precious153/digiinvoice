@@ -6,9 +6,9 @@ const image3 = 'assets/images/image3.png';
 const image4 = 'assets/images/image4.png';
 const image5 = 'assets/images/image5.png';
 const image6 = 'assets/images/image6.png';
-const invoice = 'assets/images/invoice.png';
+const invoice = 'assets/images/inventory.png';
 const receipt = 'assets/SVG/receipt.svg';
-const inventory = 'assets/SVG/inventory.svg';
+const inventory = 'assets/SVG/invoice.svg';
 
 const mainColor = Colors.blueAccent;
 const textColor = Color(0xff797979);

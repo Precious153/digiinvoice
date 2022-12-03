@@ -25,14 +25,15 @@ class MyApp extends StatelessWidget {
         ),
       ],
       child: MaterialApp(
-          debugShowCheckedModeBanner: false,
-          theme: ThemeData(
-            primarySwatch: Colors.blue,
-          ),
-          initialRoute: "/",
-          routes: {
-            '/': (context) => const Splash(),
-          }),
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        initialRoute: "/",
+        routes: {
+          '/': (context) => const Splash(),
+        },
+      ),
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:digiinvoice/const.dart';
+import 'package:digiinvoice/models/helpers/size_config.dart';
 import 'package:digiinvoice/screens/auth/verify.dart';
 import 'package:digiinvoice/widgets/InputField.dart';
 import 'package:digiinvoice/widgets/customBox.dart';
@@ -55,8 +56,8 @@ class _SignUpState extends State<SignUp> {
                 ),
                 smallspace,
                 CustomBbox(
-                  width: 335,
-                  height: 54,
+                  width: getProportionateScreenWidth(335),
+                  height: getProportionateScreenHeight(54),
                   radius: BorderRadius.circular(10),
                   shadowcolor: shadowColor.withOpacity(0.2),
                   widget: InputField(

@@ -2,8 +2,8 @@ import 'package:digiinvoice/screens/homeUI/receipt/receipt.dart';
 import 'package:flutter/material.dart';
 import '../../const.dart';
 import 'Customers/customers.dart';
-import 'inventory/InventoryPage1.dart';
-import 'invoice/InvoicePage1.dart';
+import 'inventory/Inventory.dart';
+import 'invoice/invoicePage.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -16,10 +16,10 @@ class _HomeState extends State<Home> {
   int index = 0;
   var currentIndex;
   var Kscreens = <Widget>[
-    InventoryPage1(),
-    InvoicePage1(),
-    Customers(),
+    InvoicePage(),
     Receipt(),
+    Customers(),
+    InventoryPage(),
   ];
   @override
   Widget build(BuildContext context) {

@@ -1,3 +1,4 @@
+import 'package:digiinvoice/const.dart';
 import 'package:digiinvoice/widgets/Mytext.dart';
 import 'package:flutter/material.dart';
 
@@ -12,6 +13,7 @@ class _ReceiptState extends State<Receipt> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: scaffoldColor,
       body: Column(
         children: [MyText(title: 'RECEIPT', weight: FontWeight.w700, size: 24)],
       ),

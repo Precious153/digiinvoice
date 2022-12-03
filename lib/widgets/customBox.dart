@@ -15,7 +15,7 @@ Widget CustomBbox({
     width: width,
     decoration: BoxDecoration(
       color: color,
-      borderRadius: BorderRadius.circular(20),
+      borderRadius: radius,
       shape: shapes ?? BoxShape.rectangle,
       boxShadow: [
         BoxShadow(

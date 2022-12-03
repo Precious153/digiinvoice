@@ -12,35 +12,38 @@ Widget InputField({
   final Color? borderColor,
   final Color? color,
 }) {
-  return TextFormField(
-    controller: controller,
-    keyboardType: keyboard ?? TextInputType.text,
-    textInputAction: inputAction ?? TextInputAction.next,
-    validator: validator,
-    decoration: InputDecoration(
-      labelText: label,
-      labelStyle: TextStyle(
-        color: textColor,
-        fontSize: textsize,
-      ),
-      hintText: hint,
-      hintStyle: TextStyle(
-        color: textColor,
-        fontSize: textsize,
-      ),
-      filled: true,
-      fillColor: Colors.white,
-      suffixIcon: icon,
-      enabledBorder: OutlineInputBorder(
-        borderSide: BorderSide(
-          color: Colors.transparent,
+  return Padding(
+    padding: const EdgeInsets.symmetric(horizontal: 30.0),
+    child: TextFormField(
+      controller: controller,
+      keyboardType: keyboard ?? TextInputType.text,
+      textInputAction: inputAction ?? TextInputAction.next,
+      validator: validator,
+      decoration: InputDecoration(
+        labelText: label,
+        labelStyle: TextStyle(
+          color: textColor,
+          fontSize: textsize,
         ),
-      ),
-      focusedBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(10),
-        borderSide: BorderSide(
-          color: mainColor,
-          width: 2,
+        hintText: hint,
+        hintStyle: TextStyle(
+          color: textColor,
+          fontSize: textsize,
+        ),
+        filled: true,
+        fillColor: Colors.white,
+        suffixIcon: icon,
+        enabledBorder: OutlineInputBorder(
+          borderSide: BorderSide(
+            color: Colors.transparent,
+          ),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+          borderSide: BorderSide(
+            color: mainColor,
+            width: 2,
+          ),
         ),
       ),
     ),

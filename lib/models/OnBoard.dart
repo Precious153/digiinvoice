@@ -19,7 +19,7 @@ final List<OnBoard> demo_data = [
   OnBoard(
     image: image3,
     title: "Share Invoice in Seconds",
-    description: "Easily share invoice with your customer in no time",
+    description: "Easily share inventory with your customer in no time",
   ),
   OnBoard(
     image: image4,
