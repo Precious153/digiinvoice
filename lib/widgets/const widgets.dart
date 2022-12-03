@@ -1,6 +1,6 @@
+import 'package:digiinvoice/screens/homeUI/inventory/add_inventory.dart';
 import 'package:flutter/material.dart';
 import '../const.dart';
-import '../screens/homeUI/inventory/add_inventory.dart';
 import 'Mytext.dart';
 
 class Widgets {
@@ -8,9 +8,7 @@ class Widgets {
     return FloatingActionButton.extended(
       backgroundColor: mainColor,
       onPressed: () {
-        Navigator.push(
-            context, MaterialPageRoute(builder: (_) => AddInventory()));
-        print('prssed');
+        Navigator.push(context, MaterialPageRoute(builder: (context)=>AddInventory()));
       },
       label: Row(
         children: [
