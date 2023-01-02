@@ -21,6 +21,7 @@ class _SignUpState extends State<SignUp> {
   @override
   Widget build(BuildContext context) {
     final formProvider = Provider.of<FormControllers>(context);
+    SizeConfig.init(context);
     return SafeArea(
       child: Scaffold(
         backgroundColor: scaffoldColor,
@@ -30,6 +31,7 @@ class _SignUpState extends State<SignUp> {
             scrollDirection: Axis.vertical,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 MyText(
                   title: 'Create an account',
@@ -45,8 +47,8 @@ class _SignUpState extends State<SignUp> {
                 ),
                 smallspace,
                 CustomBbox(
-                  width: 335,
-                  height: 54,
+                  width: getProportionateScreenWidth(335),
+                  height: getProportionateScreenHeight(54),
                   radius: BorderRadius.circular(10),
                   shadowcolor: shadowColor.withOpacity(0.2),
                   widget: InputField(
@@ -67,8 +69,8 @@ class _SignUpState extends State<SignUp> {
                 ),
                 smallspace,
                 CustomBbox(
-                  width: 335,
-                  height: 54,
+                  width: getProportionateScreenWidth(335),
+                  height: getProportionateScreenHeight(54),
                   radius: BorderRadius.circular(10),
                   shadowcolor: shadowColor.withOpacity(0.2),
                   widget: InputField(
@@ -78,8 +80,8 @@ class _SignUpState extends State<SignUp> {
                 ),
                 smallspace,
                 CustomBbox(
-                  width: 335,
-                  height: 54,
+                  width: getProportionateScreenWidth(335),
+                  height: getProportionateScreenHeight(54),
                   radius: BorderRadius.circular(10),
                   shadowcolor: shadowColor.withOpacity(0.2),
                   widget: InputField(
@@ -92,8 +94,8 @@ class _SignUpState extends State<SignUp> {
                 ),
                 smallspace,
                 CustomBbox(
-                  width: 335,
-                  height: 54,
+                  width: getProportionateScreenWidth(335),
+                  height: getProportionateScreenHeight(54),
                   radius: BorderRadius.circular(10),
                   shadowcolor: shadowColor.withOpacity(0.2),
                   widget: InputField(
@@ -138,8 +140,8 @@ class _SignUpState extends State<SignUp> {
                         MaterialPageRoute(builder: (_) => VerifyScreen()));
                   },
                   child: CustomBbox(
-                    width: 335,
-                    height: 54,
+                    width: getProportionateScreenWidth(335),
+                    height: getProportionateScreenHeight(54),
                     color: mainColor,
                     radius: BorderRadius.circular(20),
                     widget: Center(

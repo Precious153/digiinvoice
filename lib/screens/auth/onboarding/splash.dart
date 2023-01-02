@@ -1,7 +1,7 @@
 import 'package:digiinvoice/const.dart';
-import 'package:digiinvoice/screens/onboarding/onboarding.dart';
 import 'package:digiinvoice/widgets/Mytext.dart';
 import 'package:flutter/material.dart';
+import 'onboarding.dart';
 
 class Splash extends StatefulWidget {
   const Splash({Key? key}) : super(key: key);

@@ -1,12 +1,13 @@
 import 'package:digiinvoice/const.dart';
 import 'package:digiinvoice/screens/auth/SignUP.dart';
+import 'package:digiinvoice/screens/homeUI/invoice/invoicePage.dart';
 import 'package:digiinvoice/widgets/Mytext.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../../models/helpers/size_config.dart';
 import '../../models/provider/formControllers.dart';
 import '../../widgets/InputField.dart';
 import '../../widgets/customBox.dart';
-import '../homeUI/home.dart';
 import 'forgotPassword.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -15,6 +16,7 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final formProvider = Provider.of<FormControllers>(context);
+    SizeConfig.init(context);
     return SafeArea(
         child: Scaffold(
       backgroundColor: scaffoldColor,
@@ -38,8 +40,8 @@ class LoginScreen extends StatelessWidget {
               ),
               smallspace,
               CustomBbox(
-                width: 335,
-                height: 54,
+                width: getProportionateScreenWidth(335),
+                height: getProportionateScreenHeight(54),
                 radius: BorderRadius.circular(10),
                 shadowcolor: shadowColor.withOpacity(0.2),
                 widget: InputField(
@@ -49,14 +51,15 @@ class LoginScreen extends StatelessWidget {
               ),
               smallspace,
               CustomBbox(
-                width: 335,
-                height: 54,
+                width: getProportionateScreenWidth(335),
+                height: getProportionateScreenHeight(54),
                 radius: BorderRadius.circular(10),
                 shadowcolor: shadowColor.withOpacity(0.2),
                 widget: InputField(
                   label: 'Enter Password',
                   controller: formProvider.email,
                   inputAction: TextInputAction.done,
+                  obscure: true,
                 ),
               ),
               SizedBox(height: 24),
@@ -79,8 +82,8 @@ class LoginScreen extends StatelessWidget {
               SizedBox(height: 48),
               GestureDetector(
                 onTap: () {
-                  Navigator.pushReplacement(
-                      context, MaterialPageRoute(builder: (_) => Home()));
+                  Navigator.pushReplacement(context,
+                      MaterialPageRoute(builder: (_) => InvoicePage()));
                 },
                 child: CustomBbox(
                   color: mainColor,

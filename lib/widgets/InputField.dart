@@ -11,39 +11,39 @@ Widget InputField({
   final String? Function(String?)? validator,
   final Color? borderColor,
   final Color? color,
+  final bool? obscure,
 }) {
-  return Padding(
-    padding: const EdgeInsets.symmetric(horizontal: 30.0),
-    child: TextFormField(
-      controller: controller,
-      keyboardType: keyboard ?? TextInputType.text,
-      textInputAction: inputAction ?? TextInputAction.next,
-      validator: validator,
-      decoration: InputDecoration(
-        labelText: label,
-        labelStyle: TextStyle(
-          color: textColor,
-          fontSize: textsize,
+  return TextFormField(
+    controller: controller,
+    keyboardType: keyboard ?? TextInputType.text,
+    textInputAction: inputAction ?? TextInputAction.next,
+    validator: validator,
+    obscureText: obscure ?? false,
+    obscuringCharacter: '*',
+    decoration: InputDecoration(
+      labelText: label,
+      labelStyle: TextStyle(
+        color: textColor,
+        fontSize: 15,
+      ),
+      hintText: hint,
+      hintStyle: TextStyle(
+        color: textColor,
+        fontSize: 15,
+      ),
+      filled: true,
+      fillColor: Colors.white,
+      suffixIcon: icon,
+      enabledBorder: OutlineInputBorder(
+        borderSide: BorderSide(
+          color: Colors.transparent,
         ),
-        hintText: hint,
-        hintStyle: TextStyle(
-          color: textColor,
-          fontSize: textsize,
-        ),
-        filled: true,
-        fillColor: Colors.white,
-        suffixIcon: icon,
-        enabledBorder: OutlineInputBorder(
-          borderSide: BorderSide(
-            color: Colors.transparent,
-          ),
-        ),
-        focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10),
-          borderSide: BorderSide(
-            color: mainColor,
-            width: 2,
-          ),
+      ),
+      focusedBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(10),
+        borderSide: BorderSide(
+          color: mainColor,
+          width: 2,
         ),
       ),
     ),

@@ -1,16 +1,14 @@
 import 'package:digiinvoice/const.dart';
 import 'package:digiinvoice/models/helpers/size_config.dart';
 import 'package:digiinvoice/models/provider/formControllers.dart';
-import 'package:digiinvoice/screens/homeUI/Customers/customers.dart';
-import 'package:digiinvoice/screens/homeUI/Customers/edit_customers.dart';
-import 'package:digiinvoice/screens/homeUI/Customers/the_customers.dart';
-import 'package:digiinvoice/screens/homeUI/inventory/InventoryPage1.dart';
+import 'package:digiinvoice/screens/homeUI/Customers/customerInfo.dart';
 import 'package:digiinvoice/screens/homeUI/inventory/edit_inventory.dart';
 import 'package:digiinvoice/widgets/InputField.dart';
 import 'package:digiinvoice/widgets/Mytext.dart';
 import 'package:digiinvoice/widgets/customBox.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'Inventory.dart';
 
 class InventoryList extends StatefulWidget {
   const InventoryList({Key? key}) : super(key: key);
@@ -20,7 +18,7 @@ class InventoryList extends StatefulWidget {
 }
 
 class _InventoryListState extends State<InventoryList> {
-  TextEditingController search  = TextEditingController();
+  TextEditingController search = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -30,17 +28,21 @@ class _InventoryListState extends State<InventoryList> {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.only(left: 20.0,right: 20),
+            padding: const EdgeInsets.only(left: 20.0, right: 20),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(height: getProportionateScreenHeight(32),),
+                SizedBox(
+                  height: getProportionateScreenHeight(32),
+                ),
                 MyText(
                   title: 'Inventory',
                   size: 20,
                   color: navTextColor,
                 ),
-                SizedBox(height: getProportionateScreenHeight(16),),
+                SizedBox(
+                  height: getProportionateScreenHeight(16),
+                ),
                 Center(
                   child: CustomBbox(
                     width: double.infinity,
@@ -52,7 +54,8 @@ class _InventoryListState extends State<InventoryList> {
                       inputAction: TextInputAction.done,
                       controller: formProvider.customerSearchController,
                       icon: Padding(
-                        padding: const EdgeInsets.only(right: 5.0,top: 5,bottom: 5),
+                        padding: const EdgeInsets.only(
+                            right: 5.0, top: 5, bottom: 5),
                         child: CustomBbox(
                           width: getProportionateScreenWidth(30),
                           height: getProportionateScreenHeight(30),
@@ -67,7 +70,9 @@ class _InventoryListState extends State<InventoryList> {
                     ),
                   ),
                 ),
-                SizedBox(height: getProportionateScreenHeight(41),),
+                SizedBox(
+                  height: getProportionateScreenHeight(41),
+                ),
                 StreamBuilder(builder:
                     (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
                   return SizedBox(
@@ -75,11 +80,12 @@ class _InventoryListState extends State<InventoryList> {
                       child: ListView.builder(
                           itemCount: 1,
                           itemBuilder: (context, index) {
-                            return  InkWell(
-                              onTap: (){
-                                Navigator.push(context, MaterialPageRoute(builder: (context)=>
-                                    TheCustomers()
-                                ));
+                            return InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => CustomersInfo()));
                               },
                               child: CustomBbox(
                                 color: Colors.white,
@@ -87,29 +93,39 @@ class _InventoryListState extends State<InventoryList> {
                                 radius: BorderRadius.circular(10),
                                 height: getProportionateScreenHeight(66),
                                 widget: Padding(
-                                  padding: const EdgeInsets.only(left: 15.0,),
+                                  padding: const EdgeInsets.only(
+                                    left: 15.0,
+                                  ),
                                   child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
                                     children: [
                                       Column(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
                                         children: [
-                                          SizedBox(height: getProportionateScreenHeight(10),),
+                                          SizedBox(
+                                            height:
+                                                getProportionateScreenHeight(
+                                                    10),
+                                          ),
                                           MyText(
-                                              title: 'A pack of plaintain chips',
+                                              title:
+                                                  'A pack of plaintain chips',
                                               size: 14,
                                               weight: FontWeight.w400,
                                               color: navTextColor,
-                                              align: TextAlign.center
+                                              align: TextAlign.center),
+                                          SizedBox(
+                                            height:
+                                                getProportionateScreenHeight(8),
                                           ),
-                                          SizedBox(height: getProportionateScreenHeight(8),),
                                           MyText(
                                               title: '#2,500',
                                               size: 12,
                                               weight: FontWeight.w400,
                                               color: mainColor,
-                                              align: TextAlign.center
-                                          ),
+                                              align: TextAlign.center),
                                         ],
                                       ),
                                       Row(
@@ -117,60 +133,100 @@ class _InventoryListState extends State<InventoryList> {
                                           Row(
                                             children: [
                                               InkWell(
-                                                onTap: (){
-                                                  showModalBottomSheet(context: context,
-                                                    builder:(context)=>Container(
-                                                      height: getProportionateScreenHeight(271),
+                                                onTap: () {
+                                                  showModalBottomSheet(
+                                                    context: context,
+                                                    builder: (context) =>
+                                                        Container(
+                                                      height:
+                                                          getProportionateScreenHeight(
+                                                              271),
                                                       width: double.infinity,
                                                       color: Colors.white,
                                                       child: Column(
                                                         children: [
-                                                          SizedBox(height: getProportionateScreenHeight(24),),
+                                                          SizedBox(
+                                                            height:
+                                                                getProportionateScreenHeight(
+                                                                    24),
+                                                          ),
                                                           MyText(
-                                                            title: 'Are you sure you want to\ndelete this customer?',
+                                                            title:
+                                                                'Are you sure you want to\ndelete this customer?',
                                                             color: navTextColor,
-                                                            align: TextAlign.center,
+                                                            align: TextAlign
+                                                                .center,
                                                             size: 20,
                                                           ),
-                                                          SizedBox(height: getProportionateScreenHeight(16),),
+                                                          SizedBox(
+                                                            height:
+                                                                getProportionateScreenHeight(
+                                                                    16),
+                                                          ),
                                                           MyText(
-                                                            title: 'You will not be able to recover this\ndetails afterwards',
-                                                            align: TextAlign.center,
+                                                            title:
+                                                                'You will not be able to recover this\ndetails afterwards',
+                                                            align: TextAlign
+                                                                .center,
                                                             color: textColor,
                                                             size: 12,
-                                                            weight: FontWeight.w400,
+                                                            weight:
+                                                                FontWeight.w400,
                                                           ),
-                                                          SizedBox(height: getProportionateScreenHeight(24),),
+                                                          SizedBox(
+                                                            height:
+                                                                getProportionateScreenHeight(
+                                                                    24),
+                                                          ),
                                                           InkWell(
-                                                            onTap: (){
-                                                              Navigator.pushReplacement(context,
-                                                                  MaterialPageRoute(builder:
-                                                                      (context)=>InventoryPage1()));
+                                                            onTap: () {
+                                                              Navigator.pushReplacement(
+                                                                  context,
+                                                                  MaterialPageRoute(
+                                                                      builder:
+                                                                          (context) =>
+                                                                              InventoryPage()));
                                                             },
                                                             child: CustomBbox(
                                                               color: mainColor,
-                                                              radius: BorderRadius.circular(20),
-                                                              width: getProportionateScreenWidth(128),
-                                                              height: getProportionateScreenHeight(45),
+                                                              radius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          20),
+                                                              width:
+                                                                  getProportionateScreenWidth(
+                                                                      128),
+                                                              height:
+                                                                  getProportionateScreenHeight(
+                                                                      45),
                                                               widget: Center(
                                                                 child: MyText(
-                                                                  color: Colors.white,
-                                                                  size: textsize,
-                                                                  title: 'Yes, delete',
+                                                                  color: Colors
+                                                                      .white,
+                                                                  size:
+                                                                      textsize,
+                                                                  title:
+                                                                      'Yes, delete',
                                                                 ),
                                                               ),
                                                             ),
                                                           ),
-                                                          SizedBox(height: getProportionateScreenHeight(16),),
+                                                          SizedBox(
+                                                            height:
+                                                                getProportionateScreenHeight(
+                                                                    16),
+                                                          ),
                                                           InkWell(
-                                                            onTap: (){
-                                                              Navigator.pop(context);
+                                                            onTap: () {
+                                                              Navigator.pop(
+                                                                  context);
                                                             },
                                                             child: MyText(
                                                               title: 'Cancel',
                                                               color: textColor,
                                                               size: 14,
-                                                              weight: FontWeight.w400,
+                                                              weight: FontWeight
+                                                                  .w400,
                                                             ),
                                                           )
                                                         ],
@@ -179,34 +235,49 @@ class _InventoryListState extends State<InventoryList> {
                                                   );
                                                 },
                                                 child: CustomBbox(
-                                                    height: getProportionateScreenHeight(28),
-                                                    width: getProportionateScreenWidth(28),
+                                                    height:
+                                                        getProportionateScreenHeight(
+                                                            28),
+                                                    width:
+                                                        getProportionateScreenWidth(
+                                                            28),
                                                     color: mainColor,
                                                     widget: Center(
                                                       child: Icon(
-                                                        Icons.delete_outline_outlined,
+                                                        Icons
+                                                            .delete_outline_outlined,
                                                         color: white,
                                                         size: 20,
                                                       ),
-                                                    )
-                                                ),
+                                                    )),
                                               ),
-                                              SizedBox(width: getProportionateScreenWidth(16),),
+                                              SizedBox(
+                                                width:
+                                                    getProportionateScreenWidth(
+                                                        16),
+                                              ),
                                               InkWell(
-                                                onTap: (){
-                                                  Navigator.push(context, MaterialPageRoute(builder: (context)=>EditInventory()));
+                                                onTap: () {
+                                                  Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                          builder: (context) =>
+                                                              EditInventory()));
                                                 },
                                                 child: CustomBbox(
-                                                  height: getProportionateScreenHeight(28),
-                                                  width: getProportionateScreenWidth(28),
+                                                  height:
+                                                      getProportionateScreenHeight(
+                                                          28),
+                                                  width:
+                                                      getProportionateScreenWidth(
+                                                          28),
                                                   color: mainColor,
                                                   widget: Center(
                                                       child: Icon(
-                                                        Icons.edit,
-                                                        size: 20,
-                                                        color: white,
-                                                      )
-                                                  ),
+                                                    Icons.edit,
+                                                    size: 20,
+                                                    color: white,
+                                                  )),
                                                 ),
                                               ),
                                             ],
@@ -216,14 +287,10 @@ class _InventoryListState extends State<InventoryList> {
                                     ],
                                   ),
                                 ),
-
-
-
                               ),
                             );
                           }));
                 })
-
               ],
             ),
           ),

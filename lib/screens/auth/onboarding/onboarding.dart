@@ -1,10 +1,11 @@
 import 'package:digiinvoice/screens/auth/gettingStarted.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import '../../const.dart';
+import '../../../const.dart';
+import '../../../models/OnBoard.dart';
 import 'package:digiinvoice/widgets/Mytext.dart';
-import '../../models/OnBoard.dart';
-import '../../widgets/customBox.dart';
+
+import '../../../widgets/customBox.dart';
 
 class Onboarding extends StatefulWidget {
   const Onboarding({Key? key}) : super(key: key);
